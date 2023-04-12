@@ -1,0 +1,20 @@
+class Solution {
+    public String simplifyPath(String path) {
+       Stack<String> stack= new Stack<>();
+       for(String directory:(path.split("/"))) {
+           if(directory.equals( ".")|| directory.isEmpty()){
+               continue;
+           }
+           else if(directory.equals("..")){
+               if(!stack.isEmpty()){
+                   stack.pop();
+               }
+           }
+           else{
+               stack.push(directory);
+           }
+       }
+    return "/"+ String.join("/",stack);
+    }
+   
+}

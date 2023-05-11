@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String value = sc.nextLine();
+        char[] array = value.toCharArray();
+        int index = 0, printed = 0;
+        int x = sc.nextInt();
+        for (index = 0; index < x; index++) {
+            char ch = Character.toLowerCase(array[index]);
+            if (!(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
+                System.out.println(array[index]);
+                printed = 1;
+            }
+        }
+        if (printed == 0) {
+            System.out.println("-1");
+        }
+    }
+}
+
+
+/*input:
+aeiouskey
+4
+output: -1
+
+input : assurance
+5
+output: ssr
+*/

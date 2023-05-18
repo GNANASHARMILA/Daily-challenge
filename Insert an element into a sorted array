@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+public class InsertIntoSortedArray {
+    public static void main(String[] args) {
+        // Sorted array
+        int[] sortedArray = {2, 4, 6, 8, 10};
+        int elementToInsert = 5;
+
+        // Insert the element into the sorted array
+        int[] newArray = insertIntoSortedArray(sortedArray, elementToInsert);
+
+        // Print the updated array
+        System.out.println("Original Array: " + Arrays.toString(sortedArray));
+        System.out.println("Updated Array: " + Arrays.toString(newArray));
+    }
+
+    public static int[] insertIntoSortedArray(int[] sortedArray, int element) {
+        int index = Arrays.binarySearch(sortedArray, element);
+
+        // If the element is not found, the binarySearch method returns a negative value
+        if (index < 0) {
+            index = -(index + 1); // Get the insertion point
+        }
+
+        int[] newArray = new int[sortedArray.length + 1];
+        System.arraycopy(sortedArray, 0, newArray, 0, index); // Copy elements before insertion point
+        newArray[index] = element; // Insert the element
+        System.arraycopy(sortedArray, index, newArray, index + 1, sortedArray.length - index); // Copy remaining elements
+
+        return newArray;
+    }
+}
+
+/* 
+write  a program to insert an element into a sort array hint use arrays.binarysearch--ntt data Exception,collections,IOStreams & reflection
+*/

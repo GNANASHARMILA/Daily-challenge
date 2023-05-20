@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int x = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == x) {
+                System.out.println("yes");
+                return;
+            }
+        }
+
+        System.out.println("no");
+    }
+}
+
+/*
+
+input:
+6
+91 73 64 82 50 33
+73
+
+output:
+yes
+
+
+input:
+6
+10 54 98 75 55 14
+46
+output:
+no
+*/

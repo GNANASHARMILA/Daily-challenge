@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+
+        if (ch == 'a') {
+            System.out.printf("z%c", (char) (ch+1));
+        } else if (ch == 'z') {
+            System.out.printf("%ca", (char) (ch-1));
+        } else {
+            System.out.printf("%c%c", (char) (ch-1), (char) (ch+1));
+        }
+    }
+}
+
+/*
+input - a
+output- zb
+
+
+input- c
+output - bd
+*/

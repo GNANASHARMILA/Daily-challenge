@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		int n3=sc.nextInt();
+		if(n1 <= n2 && n2 <= n3){
+		    System.out.println("Sorted");
+		}
+		else if(n1 >= n2 && n2 >= n3){
+		    System.out.println("Sorted");
+		}
+		else{
+		    System.out.println("Not Sorted");
+		}
+	}
+}
+
+/* 
+
+Input:
+  1 4 9
+Output:
+  Sorted
+     ****************
+Input:
+  35 23 23
+Output:  
+  Sorted
+     ****************
+Input:  
+  25 37 12
+Output:  
+  Not Sorted 
+*/

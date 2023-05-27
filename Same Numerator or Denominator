@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str1=sc.next();
+		String str2=sc.next();
+		
+		String[] fraction=str1.split("/");
+		int numerator1 = Integer.parseInt(fraction[0]);
+		int denominator1=Integer.parseInt(fraction[1]);
+		
+		fraction=str2.split("/");
+		int numerator2 = Integer.parseInt(fraction[0]);
+		int denominator2=Integer.parseInt(fraction[1]);
+		
+		if(numerator1 == numerator2 || denominator1 == denominator2){
+		    System.out.println("yes");
+		}
+		else{
+		    System.out.println("No");
+		}
+	}
+}
+
+/*
+
+Input:
+  1/2 3/2
+Output:  
+  yes
+  
+Input:
+  4/5 5/4
+Output:  
+  No  
+
+*/

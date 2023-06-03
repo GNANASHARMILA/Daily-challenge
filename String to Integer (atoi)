@@ -2,7 +2,15 @@ class Solution {
     public int myAtoi(String s) {
         
         String number= s.replaceAll("[^\\d-]","");
-        int i = Integer.parseInt(number);
+        int i = 0;
+        
+        try{
+            i = Integer.parseInt(number);
+        }
+        catch(Exception e){
+            i=0;
+            //Set i to 0 or any other default value as needed
+        }
         // System.out.println(i);
         return i;
     }

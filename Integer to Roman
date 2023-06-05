@@ -1,0 +1,58 @@
+class Solution {
+    public String intToRoman(int num) {
+        
+        if(num <1 || num >3999){
+            throw new IllegalArgumentException();
+        }
+                String[] romanSymbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] romanValues = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
+        StringBuilder result = new StringBuilder();
+        int i=0;
+        while(num>0){
+            while(num >= romanValues[i]){
+                result.append(romanSymbols[i]);
+                num = num - romanValues[i];
+            }
+            i++;
+
+
+        }
+        
+        System.out.println(result.toString());
+        return result.toString();
+    }
+}
+
+/*
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+
+
+
+Example 1:
+
+Input: num = 3
+Output: "III"
+Explanation: 3 is represented as 3 ones.
+
+Example 2:
+
+Input: num = 58
+Output: "LVIII"
+Explanation: L = 50, V = 5, III = 3.
+
+Example 3:
+
+Input: num = 1994
+Output: "MCMXCIV"
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+*/

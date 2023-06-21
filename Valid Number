@@ -1,0 +1,50 @@
+class Solution {
+    public boolean isNumber(String s) {
+        s = s.trim();
+        if (s.isEmpty() || s.charAt(s.length() - 1) == 'f' || s.charAt(s.length() - 1) == 'D' || s.equals("Infinity") || s.equals("-Infinity") || s.equals("+Infinity")) {
+            return false;
+        }
+
+        try{
+            Double.parseDouble(s);
+            return true;
+        }
+        catch(NumberFormatException e){
+            return false;
+        }
+    }
+}
+
+
+/*
+
+Example 1:
+
+Input: s = "0"
+Output: true
+
+Example 2:
+
+Input: s = "e"
+Output: false
+
+Example 3:
+
+Input: s = "."
+Output: false
+
+Example 4:
+
+Input: s = "Infinity"
+Output: false
+
+Example 5:
+
+Input: s = "-Infinity"
+Output: false
+
+Example 6:
+
+Input: s = "+Infinity"
+Output: false
+*/

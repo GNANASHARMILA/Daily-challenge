@@ -1,0 +1,33 @@
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int x = sc.nextInt();
+	    int y = sc.nextInt();
+	    while(y>9){
+	        y = y/10;
+	    }
+		System.out.println((x%10)*y);
+	}
+}
+
+
+/*
+Example 1:
+Input:
+514 2004
+
+Output:
+8
+
+Example 2:
+Input:
+56 375
+
+Output:
+18
+
+*/

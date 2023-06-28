@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        char ch = input.charAt(0);
+        for(int ctr=1; ctr<=5; ctr++){
+            System.out.print(ch);
+            ch++;
+        }
+    }
+}
+
+
+/*
+Example 1:
+Input:
+E
+
+Output:
+EFGHI
+
+Example 2:
+Input:
+A
+
+Output:
+ABCDE
+*/

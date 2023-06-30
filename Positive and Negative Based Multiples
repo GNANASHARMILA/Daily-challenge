@@ -1,0 +1,38 @@
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    int ctr, value;
+	    if(num > 0){
+	        value = num % 10;
+	        for(ctr=1; ctr<=5; ctr++){
+	            System.out.print(value*ctr + " ");
+	        }
+	    }
+	    else{
+	        value = (num%10)*(-1);
+	        for(ctr=1; ctr<=10; ctr++){
+	            System.out.print(value * ctr + " ");
+	        }
+	    }
+		
+	}
+}
+
+/*
+Example 1:
+Input:
+46
+Output:
+6 12 18 24 30 
+
+Example 2:
+Input:
+-53
+Output:
+3 6 9 12 15 18 21 24 27 30 
+*/

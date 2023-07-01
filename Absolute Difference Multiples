@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int N1 = sc.nextInt();
+	    int N2 = sc.nextInt();
+	    int difference = N1 - N2;
+	    if(difference < 0){
+	        difference = difference*(-1);
+	    }
+	    for(int ctr=1; ctr<=10; ctr++){
+	        System.out.print(ctr*difference + " ");
+	    }
+		
+	}
+}
+
+
+/*
+Example 1:
+Input:
+5 8
+Output:
+3 6 9 12 15 18 21 24 27 30 
+
+
+Example 2:
+Input:
+7 5
+Output:
+2 4 6 8 10 12 14 16 18 20 
+*/

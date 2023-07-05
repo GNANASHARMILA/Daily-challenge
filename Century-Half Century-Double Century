@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    if(n==50){
+	        System.out.println("Virat kohli scored half century");
+	    }
+	    else if(n==100){
+	        System.out.println("Virat kohli scored century");
+	    }
+	    else if(n==200){
+	        System.out.println("Virat kohli scored double century");
+	    }
+	    else{
+	        System.out.println("Invalid input");
+	    }
+		
+	}
+}
+/*
+To write a program based on input values and output values
+
+Example 1:
+Input: 
+50 
+Output:
+Virat kohli scored half century
+
+Example 2:
+Input: 
+100 
+Output:
+Virat kohli scored century
+
+Example 3:
+Input: 
+200 
+Output:
+Virat kohli scored double century
+*/

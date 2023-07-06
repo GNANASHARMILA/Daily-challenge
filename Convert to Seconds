@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int h = sc.nextInt();
+	    int m = sc.nextInt();
+	    int t = (h*60*60)+(m*60);
+		System.out.println(t);
+	}
+}
+
+/*
+Example:
+Input:
+2
+15
+Output:
+8100
+
+Explanation:
+ 2hrs = 2* 60 mins * 60 seconds
+      = 7200 seconds
+
+ 15min = 15 * 60 Seconds
+       = 900 seconds
+2hrs 15min = 7200 + 900 = 8100 seconds
+
+*/

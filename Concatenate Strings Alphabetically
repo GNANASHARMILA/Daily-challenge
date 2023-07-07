@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String s1 = sc.nextLine();
+	    String s2 = sc.nextLine();
+	    if(s1.charAt(0) <= s2.charAt(0)){
+	        System.out.println(s1+s2);
+	    }
+	    else{
+	        System.out.println(s2+s1);
+	    }
+		
+	}
+}
+
+/*
+Example 1:
+Input:
+apple orange
+Output:
+appleorange
+
+
+Example 2:
+Input:
+zoo
+tiger
+Output:
+tigerzoo
+*/

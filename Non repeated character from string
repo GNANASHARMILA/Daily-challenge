@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    //Scanner sc = new Scanner(System.in);
+	    String inputstr = "teeter";
+	    for(char i:inputstr.toCharArray()){
+	        if(inputstr.indexOf(i) == inputstr.lastIndexOf(i)){
+	            System.out.println("First non repeating character: "+i);
+	            break;
+	        }
+	    }
+		
+	}
+}
+
+/*
+Output:
+First non repeating character: r
+*/

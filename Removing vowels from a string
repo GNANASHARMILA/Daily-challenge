@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string: ");
+		String s = sc.next();
+		String s1 = " ";
+		s1 = s.replaceAll("[aeiou]","");
+		System.out.println("After removing vowels: "+s1);
+	}
+}
+
+/*
+Example:
+Input:
+Enter a string: 
+srisha
+
+Output:
+After removing vowels: srsh
+*/

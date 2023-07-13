@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int r;
+	    int sum=0,p=0;
+		System.out.println("Enter a binary value");
+		int n = sc.nextInt();
+		while(n>0){
+		    r = n%10;
+		    sum = sum+(int)(r * Math.pow(2, p));
+		    n = n/10;
+		    p = p+1;
+		}
+		System.out.println(sum);
+	}
+}
+
+/*
+Example:
+Input:
+Enter a binary value
+1001
+
+Output:
+9
+
+*/

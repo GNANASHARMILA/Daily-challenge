@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int sum=0,r;
+		System.out.println("Enter a number");
+		int n = sc.nextInt();
+		while(n>0){
+		    r = n%2;
+		    sum = sum*10+r;
+		    n = n/2;
+		}
+		System.out.println(sum);
+	}
+}
+
+/*
+Example:
+Input:
+Enter a number
+9
+
+Output:
+1001
+*/

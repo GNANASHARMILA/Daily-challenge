@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main
+{
+    static int decimalToOctal(int decimalnum) {
+        int octal = 0;
+        int temp = 1;
+
+        while (decimalnum > 0) {
+            octal += (decimalnum % 8) * temp;
+            decimalnum = decimalnum / 8;
+            temp *= 10;
+        }
+
+        return octal;
+    }
+
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Decimal: ");
+		int decimalnum = sc.nextInt();
+		System.out.println(decimalToOctal(decimalnum));
+	}
+}
+
+/*
+Example:
+Input:
+Enter a Decimal: 
+78
+Output:
+116
+*/

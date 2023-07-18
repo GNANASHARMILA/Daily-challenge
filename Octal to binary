@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+    static int convert(int octal) {
+        int p = 0, decimal = 0;
+        while (octal > 0) {
+            decimal = decimal + (octal % 10) * (int) Math.pow(8, p);
+            octal /= 10;
+            p++;
+        }
+        //System.out.println(decimal);
+        long binary = 0;
+        int r;
+        p = 1;
+        while (decimal > 0) {
+            r = decimal % 2;
+            binary = binary + r * p;
+            decimal /= 2;
+            p = p * 10;
+        }
+        System.out.println("Binary value: " + binary);
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Octal Value: ");
+        int octal = sc.nextInt();
+        convert(octal);
+    }
+}
+/*
+Example:
+Input:
+Octal Value: 
+12
+
+Output:
+Binary value: 1010
+*/

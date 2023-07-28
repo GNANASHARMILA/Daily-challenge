@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int row, i, j;
+
+        // take input 
+        System.out.print("Enter the number of rows: ");
+        row = sc.nextInt();
+
+        // new line
+        System.out.println("");
+
+        // display the pattern
+        for (i = 1; i <= row; i++) {
+            // print space
+            for (j = 1; j <= row - i; j++) {
+                System.out.print(" ");
+            }
+            
+            for (j = 1; j <= i; j++) {
+                System.out.print(row);
+            }
+            // new line
+            System.out.println("");
+        }
+	}
+}
+
+/*
+Example:
+Input:
+Enter the number of rows: 3
+
+Output:
+      3
+     33
+    333
+*/

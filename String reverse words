@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	    String a[] = str.split(" ");
+	    for(int i=a.length-1;i>=0;i--){
+		    System.out.print(a[i]+" ");
+	    }
+	}
+}
+
+/*
+Example 1:
+
+Input:
+Today is friday
+Output:
+friday is Today 
+
+Example 2:
+
+Input:
+one two three
+Output:
+three two one
+*/

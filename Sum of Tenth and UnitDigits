@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int a = sc.nextInt();
+	    int b = (a/10)%10;
+	    int c = a%10;
+	    
+		System.out.println("Sum of tenth and unit digits: "+ (b+c));
+	}
+}
+
+
+/*
+Example:
+
+Input:
+    231
+
+Output:
+    Sum of tenth and unit digits: 4
+*/

@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int a = sc.nextInt();
+	    int b = sc.nextInt();
+	    for(int i=a+1;i<b;i++){
+	        if(i%2 != 0){
+	            System.out.print(i+" ");
+	        }
+	    }
+	    
+		
+	}
+}
+
+/*
+Example 1:
+
+Input:
+    1
+    15
+Output:
+    3 5 7 9 11 13 
+
+
+Example 2:
+
+Input:
+    20
+    50
+Output:
+    21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 
+*/

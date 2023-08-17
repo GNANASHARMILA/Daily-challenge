@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        String s1 = s.replaceAll("\\s","").toLowerCase();
+        String s2 = t.replaceAll("\\s","").toLowerCase();
+        boolean status = true;
+
+        if(s1.length() != s2.length()){
+            status = false;
+        }
+        char[] Array1 = s1.toCharArray();
+        char[] Array2 = s2.toCharArray();
+        Arrays.sort(Array1);
+        Arrays.sort(Array2);
+        return Arrays.equals(Array1,Array2);
+    }
+   
+}
+
+/*
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+*/

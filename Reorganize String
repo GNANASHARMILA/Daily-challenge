@@ -1,0 +1,67 @@
+class Solution {
+    public String reorganizeString(String s) {
+
+        // Assuming only lowercase letters
+        int[] charCount = new int[26];
+
+        // Count the frequency of each character
+        for(char c : s.toCharArray()){
+            charCount[c - 'a']++;
+        }
+
+        int maxCount = 0;
+        char maxChar = 'a';
+
+        // Find the character with the maximum count
+        for(int i=0;i<26;i++){
+            if(charCount[i]>maxCount){
+                maxCount = charCount[i];
+                maxChar = (char) ('a' + i);
+            }
+        }
+
+        // Check if reorganizing is possible
+        if (maxCount > (s.length() + 1) / 2) {
+            return "";
+        }
+
+        // Create the reorganized string
+        char[] result = new char[s.length()];
+        int index = 0;
+
+        // Fill even indices first with the most frequent character
+        while (charCount[maxChar - 'a'] > 0) {
+            result[index] = maxChar;
+            index += 2;
+            charCount[maxChar - 'a']--;
+        }
+
+
+        // Fill other characters
+        for (int i = 0; i < 26; i++) {
+            while (charCount[i] > 0) {
+                if (index >= s.length()) {
+                    index = 1; 
+                }
+                result[index] = (char) ('a' + i);
+                index += 2;
+                charCount[i]--;
+            }
+        }
+
+        return new String(result);
+
+    }
+}
+
+/*
+Example 1:
+
+    Input: s = "aab"
+    Output: "aba"
+
+Example 2:
+
+    Input: s = "aaab"
+    Output: ""
+ */

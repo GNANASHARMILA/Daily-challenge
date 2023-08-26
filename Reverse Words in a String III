@@ -1,0 +1,33 @@
+class Solution {
+    public String reverseWords(String s) {
+        String[] words = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for(String word:words){
+            StringBuilder RevWords = new StringBuilder(word);
+            sb.append(RevWords.reverse()).append(" ");
+        }
+        return sb.toString().trim();
+        //trim() method removes whitespace from both ends of a string.
+    }
+}
+
+/*
+Example 1:
+
+      Input: s = "Let's take LeetCode contest"
+      Output: "s'teL ekat edoCteeL tsetnoc"
+
+Example 2:
+
+      Input: s = "God Ding"
+      Output: "doG gniD"
+ 
+
+Constraints:
+
+      1 <= s.length <= 5 * 104
+      s contains printable ASCII characters.
+      s does not contain any leading or trailing spaces.
+      There is at least one word in s.
+      All the words in s are separated by a single space.
+*/

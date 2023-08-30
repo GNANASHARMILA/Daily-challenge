@@ -1,0 +1,49 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()){
+            return false;
+        }
+
+        int[] st = new int[128];
+        int[] ts = new int[128];
+
+        for(int i=0;i<s.length();i++){
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+
+            if(st[sChar]==0 &&ts[tChar]==0){
+                st[sChar] = tChar;
+                ts[tChar] = sChar;
+            
+            }
+            else if(st[sChar] != tChar || ts[tChar] != sChar){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+/*
+Example 1:
+
+      Input: s = "egg", t = "add"
+      Output: true
+
+Example 2:
+
+      Input: s = "foo", t = "bar"
+      Output: false
+
+Example 3:
+
+      Input: s = "paper", t = "title"
+      Output: true
+ 
+
+Constraints:
+
+      1 <= s.length <= 5 * 104
+      t.length == s.length
+      s and t consist of any valid ascii character.
+*/

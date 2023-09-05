@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+public class Main
+{
+	public static void main(String[] args) {
+	    List<Integer> original = new ArrayList<>();
+	    original.add(1);
+	    original.add(2);
+	    original.add(2);
+	    original.add(3);
+	    original.add(4);
+	    original.add(5);
+	    original.add(5);
+	    original.add(3);
+	    System.out.println("List of Original numbers: "+original);
+	    List<Integer> unique = new ArrayList<>();
+	    
+	    for(Integer item : original){
+	        if(!unique.contains(item)){
+	            unique.add(item);
+	        }
+	    }
+		System.out.println("List of Without duplicates: "+unique);
+	}
+}
+
+/*
+Output:
+      List of Original numbers: [1, 2, 2, 3, 4, 5, 5, 3]
+      List of Without duplicates: [1, 2, 3, 4, 5]
+
+*/

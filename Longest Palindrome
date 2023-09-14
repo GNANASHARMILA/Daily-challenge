@@ -1,0 +1,43 @@
+class Solution {
+    public int longestPalindrome(String s) {
+        if(s == null || s.isEmpty()){
+            return 0;
+        }
+
+        int[] charCount = new int[128];
+        for (char c : s.toCharArray()) {
+            charCount[c]++;
+        }
+        int maxPalindrome = 0;
+        boolean odd = false;
+
+        for(int count : charCount){
+            maxPalindrome += count/2*2;
+            if(count % 2 != 0){
+                odd = true;
+            }
+        }
+        return odd ? maxPalindrome + 1 : maxPalindrome; 
+        
+    }
+}
+
+/*
+Example 1:
+
+        Input: s = "abccccdd"
+        Output: 7
+        Explanation: One longest palindrome that can be built is "dccaccd", whose length is 7.
+
+Example 2:
+
+        Input: s = "a"
+        Output: 1
+        Explanation: The longest palindrome that can be built is "a", whose length is 1.
+ 
+
+Constraints:
+
+        1 <= s.length <= 2000
+        s consists of lowercase and/or uppercase English letters only.
+*/

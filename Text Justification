@@ -1,0 +1,97 @@
+class Solution {
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> result = new ArrayList<>();
+        int right = 0,left = 0;
+        int n = words.length;
+        while(right < n){
+            int totle = 0,numword = 0;
+            while(right < n){
+                totle +=words[right].length();
+                numword++;
+                if(totle + numword - 1>maxWidth){
+                    totle -= words[right].length();
+                    numword--;
+                    break;
+                }
+                right++;
+            }
+            StringBuilder sb=new StringBuilder();
+            if(right < n && numword > 1){
+                int spaceCount = (maxWidth - totle) / (numword - 1);
+                int totalSpace = (maxWidth - totle) % (numword - 1);
+                String space="";
+                for(int i=0;i<spaceCount;i++)space+=" ";
+                while(left < right-1){
+                    sb.append(words[left]+space);
+                    if(totalSpace != 0){
+                        sb.append(" ");
+                        totalSpace--;
+                    }
+                    left++;
+                }
+                sb.append(words[left++]);
+            }else{
+                while(left < right-1){
+                    sb.append(words[left]+" ");
+                    left++;
+                }
+                sb.append(words[left++]);
+                if(sb.length() < maxWidth){
+                    int numspace = maxWidth-sb.length();
+                    String space="";
+                    for(int i=0;i<numspace;i++)space+=" ";
+                    sb.append(space);
+                }
+            }
+            result.add(sb.toString());
+        }
+        return result;
+        
+    }
+    
+    
+}
+
+
+/*
+Example 1:
+
+          Input: 
+                words = ["This", "is", "an", "example", "of", "text", "justification."], maxWidth = 16
+
+          Output:
+                [
+                   "This    is    an",
+                   "example  of text",
+                   "justification.  "
+                ]
+
+Example 2:
+
+          Input: 
+                words = ["What","must","be","acknowledgment","shall","be"], maxWidth = 16
+
+          Output:
+                [
+                  "What   must   be",
+                  "acknowledgment  ",
+                  "shall be        "
+                ]
+                Explanation: Note that the last line is "shall be    " instead of "shall     be", because the last line must be left-justified instead of fully-justified.
+                Note that the second line is also left-justified because it contains only one word.
+
+Example 3:
+
+          Input: 
+                words = ["Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"], maxWidth = 20
+
+          Output:
+                [
+                  "Science  is  what we",
+                  "understand      well",
+                  "enough to explain to",
+                  "a  computer.  Art is",
+                  "everything  else  we",
+                  "do                  "
+                ]
+*/
